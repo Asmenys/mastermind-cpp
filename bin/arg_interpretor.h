@@ -1,6 +1,6 @@
 class Arg_Interpretor{
     public:
-        void interpret_args();
+        static void interpret_args(int argc, char *argv[]);
     private:
-        class Command_Interpretor;
+        static void call_comand(char argv);
 };
