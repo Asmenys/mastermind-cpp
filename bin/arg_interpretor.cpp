@@ -1,7 +1,9 @@
 #include "../bin/arg_interpretor.h"
+#include <iostream>
 #include <vector>
 
-std::vector<std::vector<std::string>> Arg_Interpretor::commands = {};
+std::vector<std::vector<std::string>> Arg_Interpretor::commands = {
+    {"h", "Prints this page"}, {"p", "Starts the game"}};
 
 void Arg_Interpretor::interpret_args(int argc, char *argv[]) {
   for (int i = 1; i < argc; i++) {
@@ -16,9 +18,10 @@ void Arg_Interpretor::start_engine(char command) {
     help();
   }
 }
-void Arg_Interpretor::help(){
-  for(int i = 0; i<command_count; i++)
-  {
-    std::cout<<command_options[i]<<" "<<command_definitions[i]<<std::endl;
+void Arg_Interpretor::help() {
+  std::cout << "[OPTION] :: DESCRIPTION" << std::endl;
+  for (int i = 0; i < commands.size(); i++) {
+    std::cout << "[" << commands[i][0] << "] :: "
+              << " " << commands[i][1] << std::endl;
   }
 }
