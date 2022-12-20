@@ -1,4 +1,4 @@
-#include "../bin/arg_interpretor.h"
+#include "arg_interpretor.h"
 #include <iostream>
 #include <vector>
 
