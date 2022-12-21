@@ -24,12 +24,16 @@ bool CodeKeeper::validate_input_code(std::vector<int> input_code) {
 
 std::vector<int> CodeKeeper::generate_code() {
   std::vector<int> generated_code;
+  std::vector<int> number_pool = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
   std::random_device rdev;
   std::mt19937 gen(rdev());
-  std::uniform_int_distribution<> distrib(1, 9);
   for (int i = 0; i < code_length; i++) {
-    generated_code.push_back(distrib(gen));
+    std::uniform_int_distribution<> distrib(0, number_pool.size());
+    int rnd_index = distrib(gen);
+    generated_code.push_back(number_pool.at(rnd_index));
+    number_pool.erase(number_pool.begin() + rnd_index);
   }
+
   return generated_code;
 }
 
