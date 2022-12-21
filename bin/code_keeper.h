@@ -3,8 +3,10 @@
 class CodeKeeper {
 public:
   static void set_code(std::vector<int> input_code);
-  static void compare_code(std::vector<int> input_code);
+  static std::vector<int> compare_code(std::vector<int> input_code);
   static std::vector<int> generate_code();
+  static std::vector<int> user_code_input();
+  static int code_length;
 
 private:
   static std::vector<int> code;
