@@ -22,3 +22,5 @@ void GameMode::print_vector(std::vector<int> input_vector) {
     std::cout << input_vector.at(i);
   }
 }
+
+void GameMode::clear_screen() { std::cout << "\x1B[2J\x1B[H"; }

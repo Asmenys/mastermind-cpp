@@ -8,7 +8,7 @@ void CodeBreaker::game_loop() {
     turns++;
   }
   std::cout << "You took " << turns
-            << " guesses, can you do it in fewer next time?";
+            << " guesses, \ncan you do it in fewer next time?\n" << std::endl;
 }
 
 int CodeBreaker::code_breaker_cycle() {
@@ -17,6 +17,7 @@ int CodeBreaker::code_breaker_cycle() {
       CodeKeeper::compare_code(user_guess);
   print_guess_results(guess_comparison_results);
   if (win_condition_check(guess_comparison_results)) {
+    clear_screen();
     std::cout << "Well done, the number was ";
     print_vector(user_guess);
     std::cout << ". ";
