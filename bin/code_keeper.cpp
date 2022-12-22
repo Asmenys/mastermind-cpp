@@ -28,7 +28,7 @@ std::vector<int> CodeKeeper::generate_code() {
   std::random_device rdev;
   std::mt19937 gen(rdev());
   for (int i = 0; i < code_length; i++) {
-    std::uniform_int_distribution<> distrib(0, number_pool.size());
+    std::uniform_int_distribution<> distrib(0, number_pool.size() - 1);
     int rnd_index = distrib(gen);
     generated_code.push_back(number_pool.at(rnd_index));
     number_pool.erase(number_pool.begin() + rnd_index);
