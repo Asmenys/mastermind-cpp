@@ -2,6 +2,7 @@
 #include "code_keeper.h"
 #include <iostream>
 void CodeBreaker::game_loop() {
+  clear_screen();
   CodeKeeper::set_code(CodeKeeper::generate_code());
   int turns = 0;
   while (code_breaker_cycle()) {

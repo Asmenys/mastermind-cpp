@@ -1,6 +1,8 @@
+#include "bin/arg_interpretor.h"
+#include "bin/engine.h"
 #include <iostream>
-#include "bin/arg_interpretor.cpp"
-
+#include <ostream>
+#include <vector>
 int main(int argc, char *argv[]) {
-    Arg_Interpretor::interpret_args(argc, argv);
+  Engine::engine_loop();
 }
